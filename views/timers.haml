@@ -1,23 +1,41 @@
-#secondary-content
+#meta
+  %h1
+    %a{:href => "/"}
+      %span Tomatoist
+      
   %form#rename{:action => session_path(@session), :method => :post}
     %label== http://#{request.env['HTTP_HOST']}/
     %input{:type => 'text', :name => 'custom', :value => @session.display_name }
     %input{:type => 'hidden', :name => '_method', :value => 'put'}
     %input#long{ :value => "rename", :type => "submit" }
-  %p
-    %a{:href => '/faq', :rel => 'facebox'} What's this all about?
   #twitter
+  #footer
+    %a{:href => '/faq', :rel => 'facebox'} About
+    %p 
+      A
+      %span#hashrocket
+        %span Hashrocket
+      Joint
+    
+    
 
 #timer_buttons
   - [Pomodoro,ShortBreak,LongBreak].each do |type|
     = haml(:form, {:layout => false}, {:session => @session, :type => type})
 
+
+div#tomatoist div#meta h2{
+  font-family: "Adobe Caslon Pro", Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.25em;
+  color: #4f533e;
+  font-size: 1.1em;
+}
 %p.status No timer like the present
 
 #timer
 #history
-  %p Timer History
+  %h2 Timer History
   %ul
     - @session.timers(:order => [:created_at.desc]).recent.each do |timer|
-      %li== #{timer.class.label} <small>(#{timer.display_time})</small>
+      %li== <span class="time">#{timer.display_time}</span> #{timer.class.label} 
 

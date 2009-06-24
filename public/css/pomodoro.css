@@ -1,42 +1,365 @@
-body{
-  text-align:center;
-  font:24px/1.231 "Georgia", serif;
-  color: #524343;
+/* @override http://localhost:4567/css/pomodoro.css */
+
+
+
+
+
+/* @group Reset */
+
+html, body{ margin: 0; padding: 0; height: 100%;  background: url(images/background.png); }
+
+div#tomatoist dl,
+div#tomatoist dt,
+div#tomatoist dd,
+div#tomatoist ul,
+div#tomatoist ol,
+div#tomatoist li,
+div#tomatoist h1,
+div#tomatoist h2,
+div#tomatoist h3,
+div#tomatoist h4,
+div#tomatoist h5,
+div#tomatoist h6,
+div#tomatoist pre,
+div#tomatoist code,
+div#tomatoist form,
+div#tomatoist fieldset,
+div#tomatoist legend,
+div#tomatoist input,
+div#tomatoist textarea,
+div#tomatoist p,
+div#tomatoist blockquote,
+div#tomatoist th,
+div#tomatoist td{margin:0;padding:0; letter-spacing: 0;}
+
+div#tomatoist table{border-collapse:collapse;border-spacing:0;}
+
+div#tomatoist fieldset,
+div#tomatoist img{border:0;}
+
+div#tomatoist address,
+div#tomatoist caption,
+div#tomatoist cite,
+div#tomatoist code,
+div#tomatoist dfn,
+div#tomatoist em,
+div#tomatoist strong,
+div#tomatoist th,
+div#tomatoist var{font-style:normal;font-weight:normal;}
+
+div#tomatoist li{list-style:none;
+	background: none;
 }
-a{ color: #e61717; }
-a:visited{ color: #7b0404; }
+
+div#tomatoist caption,
+div#tomatoist th{text-align:left;}
+
+div#tomatoist h1,
+div#tomatoist h2,
+div#tomatoist h3,
+div#tomatoist h4,
+div#tomatoist h5,
+div#tomatoist h6{font-size:100%;font-weight:normal; background: none;}
+
+div#tomatoist q:before,
+div#tomatoist q:after{content:'';}
+
+div#tomatoist abbr,
+div#tomatoist acronym {border:0;font-variant:normal;}
+
+div#tomatoist sup {vertical-align:text-top;}
+
+
+div#tomatoist sub {vertical-align:text-bottom;}
+div#tomatoist input,
+div#tomatoist textarea,
+div#tomatoist select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+
+div#tomatoist legend{color:#000;}
+
+div#tomatoist table {font-size:inherit;}
+
+div#tomatoist pre,
+div#tomatoist code,
+div#tomatoist kbd,
+div#tomatoist samp,
+div#tomatoist tt{font-family:monospace;}
+
+div#tomatoist l{display: block;}
+
+/* @end */
+
+div#tomatoist{
+  height: 100%;
+  padding-right: 295px;
+  position: relative;
+  min-width: 50em;
+}
+
+div#tomatoist h2{
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: Verdana, "Lucida Grande", Lucida, sans-serif;
+  font-weight: bold;
+  font-size: 0.75em;
+  color: #5b3527;
+  margin-top: 2em;
+  margin-bottom: 0.5em;	
+}
+
+/* @group Meta */
+
+div#tomatoist div#meta{
+	width: 250px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0 20px;
+	background: #cfd1ba;
+  border-left: 5px solid#bcbfa4;
+  text-align: left;
+  color: #383e29;
+  font-family: Verdana, "Lucida Grande", Lucida, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.6em;
+  overflow: hidden;
+}
+
+div#tomatoist div#meta h2{
+  font-family: "Adobe Caslon Pro", Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.25em;
+  color: #4f533e;
+  font-size: 1.1em;
+}
+
+div#tomatoist div#meta h1{
+	padding-top: 2em;
+  margin-bottom: 2em;
+}
+
+div#tomatoist div#meta h1 a{
+	display: block;
+	width: 222px;
+	height: 30px;
+	background: url(images/tomatoist-logo.png) no-repeat;
+}
+
+div#tomatoist div#meta h1 a span{
+	display: none;
+}
+
+div#tomatoist div#meta div#footer{
+	position: absolute;
+	bottom: 20px;
+}
+
+div#tomatoist div#meta div#footer p {
+	margin-top: 0.5em;
+}
+
+div#tomatoist div#meta div#footer span#hashrocket{
+	display: inline-block;
+	width: 107px;
+	height: 16px;
+	background: url(images/hashrocket.png);
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+
+div#tomatoist div#meta div#footer span#hashrocket span{
+  display: none;
+}
+
+
+/* @end */
+
+
+	
+a{ color: #a92a10; }
+a:hover{ text-decoration: none; }
 
 body.expired{
   background-color: #e61717;
   color: #f69c9c;
 }
+
+
 body.expired a{ color: #fff; }
 body.expired a:visited{ color: #f6c59c; }
 
-.countdown_row{
-  font-size:2.5em;
-  color:#130a02;
-  width: 11.3em;
-  white-space: nowrap;
-  margin:0 auto;
-  text-align:left;
+div#tomatoist .countdown_amount{ font-size:10em; height: 0.9em; color: white;  display: block; text-shadow: 2px 2px black;}
+
+div#tomatoist .countdown_section{ display: inline-block; text-transform: uppercase; letter-spacing: 0.25em; width: 12em; color: #76796e; text-shadow: 0 1px black;}
+
+div#tomatoist .countdown_section:first-child{margin-right: 1em; padding-right: 1.75em; background: url(images/colon.png) right 40% no-repeat;}
+
+div#tomatoist p.status{ 
+	width: 25em;
+	margin: 0 auto;
+	margin-bottom: 1em;
+  font-family: "Adobe Caslon Pro", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #585a51;
 }
-.countdown_amount{ font-size:3em; }
-.countdown_section{ float:left; margin:1em; }
 
-p.status{ margin-top:1.5em; }
+div#tomatoist div#timer{ 
+	width: 33em;
+	height: 12.5em; 
+	padding: 0.25em 1em;
+	background: url(images/timer-pattern.png) top repeat-x;
+	color: white;
+	text-align: center;
+	border: 3px solid #2a3211;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin: 0 auto;
+	white-space: nowrap;
+  font-family: "Adobe Caslon Pro", Georgia, "Times New Roman", Times, serif;
+}
 
-#timer{ overflow:auto; }
+body.expired div#tomatoist div#timer{ 
+	background-image: url(images/expired-timer-pattern.png);
+	border-color: #3a1107;
+}
+
+body.expired div#tomatoist .countdown_section{
+	color: #97190b; 
+}
+
+body.expired div#tomatoist .countdown_section:first-child{
+	background-image: url(images/expired-colon.png);
+}
+
+div#tomatoist #timer:after{
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
 #timer_buttons form{ display:inline; padding:0 5px 30px 10px; }
-#timer_buttons form.next{background:url(/imgs/tomato_tiny.png) 50% 100% no-repeat}
-
-#history small{ font-size:.9em; }
-#history ul{
-  text-align:left;
-  width:350px;
-  margin:0 auto;
+div#tomatoist #timer_buttons form.next{
+	background: url(/imgs/tomato_tiny.png) 50% 100% no-repeat;
 }
-#history ul li{ list-style:none; }
+
+div#tomatoist input,
+div#tomatoist button{
+	border: 1px solid #909275;
+	padding: 0.67em 1.25em;
+  font-family: Verdana, "Lucida Grande", Lucida, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.67em;
+  color: #4c523d;
+  background-color: #f1f2e6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  letter-spacing: 0.1em;
+}
+
+div#tomatoist input:hover,
+div#tomatoist button:hover{
+	background: white;
+}
+
+div#tomatoist button{
+	padding: 0;
+}
+
+div#tomatoist button span{
+	padding: 0.45em 1.1em;
+	border: 3px solid transparent;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	display: block;
+	border-bottom-color: #dddfce;
+	border-right-color: #e3e5d3;
+}
+
+div#tomatoist input:hover span,
+div#tomatoist button:hover span{
+	border-bottom-color: #dddfce;
+	border-right-color: #eff1de;
+}
+
+div#tomatoist input[type="submit"]:active span,
+div#tomatoist button[type="submit"]:active span{
+	
+}
+
+div#tomatoist input[type="submit"]:active span,
+div#tomatoist button[type="submit"]:active span{
+	color: #888;
+	background: #e3e5ce;
+	border-color: transparent;
+	border-top-color: #caccbd;
+	border-left-color: #d9dbc9;
+	
+}
+
+
+
+div#tomatoist div#timer_buttons{
+	width: 30em;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 5em;
+	padding-bottom: 2em;
+}
+
+div#tomatoist div#timer_buttons form.next button span{
+	border-color: #94b500;
+}
+
+
+div#tomatoist div#history{
+  width: 28em;
+  margin: 3em auto;
+}
+
+div#tomatoist div#history h2{
+	margin-left: 2em;
+}
+
+
+div#tomatoist div#history ul{
+	display: block;
+  text-align:left;
+  background: white;
+  padding: 10px 1em;
+  border: 1px solid #cfd1ba;
+  border-bottom-color: #bec0ab;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+  font-family: Verdana, "Lucida Grande", Lucida, sans-serif;
+  color: #585a51;
+}
+
+#history ul li{ 
+	padding: 0.75em 0 0.75em 6em;
+	position: relative;
+	border-bottom: 1px solid #dde1cb;
+}
+
+#history ul li:last-child{ 
+	border-bottom: none;
+}
+
+
+div#tomatoist div#history span.time{ 
+	position: absolute;
+	left: 0.5em;
+	text-transform: lowercase;
+	letter-spacing: 0.1em;
+	font-size: 0.75em;
+	line-height: 1.75em;
+	color: #a8a996;
+	text-align: right;
+}
+
 
 #secondary-content{
   position:absolute;
@@ -53,6 +376,6 @@ form#rename input[type=text]{ width: 60px; }
 #facebox a:visited{ color: #7b0404; }
 
 #twitter{ text-align:left; }
-#twitter h2{ text-align:center; font-size:1.2em; margin:0.25em; }
+
 #twitter ul, #twitter li{ margin:0; padding:0; list-style:none; }
 

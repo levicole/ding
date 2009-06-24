@@ -33,5 +33,6 @@
     %link{ :rel => 'stylesheet', :href => '/facebox/facebox.css', :type => 'text/css', :media => 'screen' }
     %title= @title || 'Pomodoro!'
   %body
-    = yield
-    = erb(:ga, :layout => false)
+    #tomatoist
+      = yield
+      = erb(:ga, :layout => false)
