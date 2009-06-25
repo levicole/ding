@@ -2,7 +2,7 @@
   %h1
     %a{:href => "/"}
       %span Tomatoist
-      
+
   %form#rename{:action => session_path(@session), :method => :post}
     %label== http://#{request.env['HTTP_HOST']}/
     %input{:type => 'text', :name => 'custom', :value => @session.display_name }
@@ -16,20 +16,11 @@
       %span#hashrocket
         %span Hashrocket
       Joint
-    
-    
 
 #timer_buttons
   - [Pomodoro,ShortBreak,LongBreak].each do |type|
     = haml(:form, {:layout => false}, {:session => @session, :type => type})
 
-
-div#tomatoist div#meta h2{
-  font-family: "Adobe Caslon Pro", Georgia, "Times New Roman", Times, serif;
-  letter-spacing: 0.25em;
-  color: #4f533e;
-  font-size: 1.1em;
-}
 %p.status No timer like the present
 
 #timer
